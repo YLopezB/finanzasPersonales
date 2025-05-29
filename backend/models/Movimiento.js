@@ -2,12 +2,16 @@ import {Schema, model} from "mongoose"
 
 let collection = "movimientos"
 let schema = Schema({
-    banco: {type: Schema.Types.ObjectId, ref: 'bancos', require: false },
+    account: {type: Schema.Types.ObjectId, ref: 'cuentas', require: false },
     date: {type: Date, require: true},
     name: {type: String, require: true},
-    amount: {type: Number, require: true}
+    amount: {type: Number, require: true}, 
+    typeMovement: {type: Schema.Types.ObjectId, ref: 'tipoCuentas', require: true },
+    reference: {type: Schema.Types.ObjectId, ref: 'ingresos', require: false },
+    reference: {type: Schema.Types.ObjectId, ref: 'egresos', require: false },
+    reference: {type: Schema.Types.ObjectId, ref: 'cuentas', require: false },
 })
 
-let Gastos = model(collection, schema)
+let Movimiento = model(collection, schema)
 
-export default Gastos
+export default Movimiento
