@@ -3,9 +3,10 @@ import jwt from "jsonwebtoken"
 export default (req, res, next) => {
     let token = jwt.sign({
         name: req.body.name,
+        lastName: req.body.lastName,
         email: req.body.email,
-        photo: req.body.password,
-        role: 0
+        role: req.body.role,
+        home: req.body.home
     },
     process.env.ENCRYPTION,
     {expiresIn: "15m"}
