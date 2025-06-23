@@ -24,13 +24,15 @@ let validateToken = async (req, res, next) => {
   try {
     return res.status(200).json({
       response: {
-        name: req.usuario.name,
-        lastName: req.usuario.lastName,
-        email: req.usuario.email,
-        photo: req.usuario.photo,
-        role: req.usuario.role,
-        active: req.usuario.active,
-        online: req.usuario.online      },
+        name: req.user.name,
+        lastName: req.user.lastName,
+        email: req.user.email,
+        photo: req.user.photo,
+        role: req.user.role,
+        active: req.user.active,
+        online: req.user.online,
+        home: req.user.home      
+      },
     });
   } catch (error) {
     next(error);
