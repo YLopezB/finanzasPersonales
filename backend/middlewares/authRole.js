@@ -4,7 +4,7 @@ export default async (req, res, next) => {
             next()
         else{
             res.status(403).json({
-                message: "El usuario no tiene permiso para esta solicitud"
+                message: `Ups❗${req.user.name} no tienes permiso para esta solicitud 🔐`
             })
         }
     } catch (error) {

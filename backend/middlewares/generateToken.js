@@ -9,7 +9,7 @@ export default (req, res, next) => {
         home: req.body.home
     },
     process.env.ENCRYPTION,
-    {expiresIn: "15m"}
+    {expiresIn: "1h"}
     )
     req.token = token
     next()

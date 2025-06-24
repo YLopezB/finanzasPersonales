@@ -6,7 +6,7 @@ let schema = Schema({
     date: {type: Date, require: true},
     name: {type: String, require: true},
     amount: {type: Number, require: true}, 
-    typeMovement: {type: Schema.Types.ObjectId, ref: 'tipoCuentas', require: true },
+    typeMovement: {type: Schema.Types.ObjectId, ref: 'tipoMovimientos', require: true },
     reference: {type: Schema.Types.ObjectId, ref: 'ingresos', require: false },
     reference: {type: Schema.Types.ObjectId, ref: 'egresos', require: false },
     reference: {type: Schema.Types.ObjectId, ref: 'cuentas', require: false },

@@ -4,6 +4,7 @@ let allUsers = async (req, res, next) => {
   try {
     let { id, name, lastName, email, role, active, online } = req.query;
     let query = {};
+    query.home = req.user.home
     if (id) query._id = id;
     if (name) query.name = { $regex: name, $options: "i" };
     if (lastName) query.lastName = { $regex: lastName, $options: "i" };
