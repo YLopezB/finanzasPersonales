@@ -2,14 +2,15 @@ import {Schema, model} from "mongoose"
 
 let collection = "movimientos"
 let schema = Schema({
-    account: {type: Schema.Types.ObjectId, ref: 'cuentas', require: false },
-    date: {type: Date, require: true},
-    name: {type: String, require: true},
+    home: {type: Schema.Types.ObjectId, ref: 'hogares', require: true},
+    account: {type: Schema.Types.ObjectId, ref: 'cuentas', require: true },
+    date: {type: Date, require: true, default: Date.now},
+    details: {type: String, require: true},
     amount: {type: Number, require: true}, 
     typeMovement: {type: Schema.Types.ObjectId, ref: 'tipoMovimientos', require: true },
-    reference: {type: Schema.Types.ObjectId, ref: 'ingresos', require: false },
-    reference: {type: Schema.Types.ObjectId, ref: 'egresos', require: false },
-    reference: {type: Schema.Types.ObjectId, ref: 'cuentas', require: false },
+    inFlow: {type: Schema.Types.ObjectId, ref: 'ingresos', require: false },
+    outFlow: {type: Schema.Types.ObjectId, ref: 'egresos', require: false },
+    toAccount: {type: Schema.Types.ObjectId, ref: 'cuentas', require: false },
 })
 
 let Movimiento = model(collection, schema)

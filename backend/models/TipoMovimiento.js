@@ -2,8 +2,7 @@ import {Schema, model} from "mongoose"
 
 let collection = "tipoMovimientos"
 let schema = Schema({
-    name: {type: String, require: true},
-    home: {type: Schema.Types.ObjectId, ref: 'hogares', require: true }
+    name: {type: String, require: true, enum: ['ingreso', 'egreso', 'trasnferencia']}
 })
 
 let TipoMovimeinto = model(collection, schema)
