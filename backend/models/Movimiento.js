@@ -7,7 +7,7 @@ let schema = Schema({
     date: {type: Date, require: true, default: Date.now},
     details: {type: String, require: true},
     amount: {type: Number, require: true}, 
-    typeMovement: {type: Schema.Types.ObjectId, ref: 'tipoMovimientos', require: true },
+    typeMovement: {type: String, require: true },
     inFlow: {type: Schema.Types.ObjectId, ref: 'ingresos', require: false },
     outFlow: {type: Schema.Types.ObjectId, ref: 'egresos', require: false },
     toAccount: {type: Schema.Types.ObjectId, ref: 'cuentas', require: false },
