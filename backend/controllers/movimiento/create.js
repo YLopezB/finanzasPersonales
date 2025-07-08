@@ -9,7 +9,6 @@ let register = async (req, res, next) => {
         let accountBd = await findAmount(account)
         let newAmount = accountBd.amount
         let typeMovement = ""
-
         if (inFlow) {
             typeMovement = "ingreso"
             await updateAmount(account, amount)
