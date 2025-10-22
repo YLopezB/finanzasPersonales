@@ -8,7 +8,6 @@ let allAccount = async (req, res, next) => {
         if(name) query.name = { $regex: name, $options: "i" }
         if(accountType) query.accountType = accountType
         let all = await Cuenta.find(query)
-        console.log(query);
         return res.status(200).json({
             response: all
         })
