@@ -5,6 +5,7 @@ import Nombre from "../components/Nombre";
 import Notifications from "../components/Notifications";
 import ResumenCuentas from "../components/ResumenCuentas";
 import SliderCards from "../components/SliderCards";
+import TablaMovimientos from "../components/TablaMovimientos";
 import TituloPagina from "../components/TituloPagina";
 
 export default function Home() {
@@ -25,6 +26,9 @@ export default function Home() {
         <ResumenCuentas />
       </div>
         <CardBalance />
+        <div className="flex justify-center">
+          <TablaMovimientos/>
+        </div>
     </div>
   );
 }

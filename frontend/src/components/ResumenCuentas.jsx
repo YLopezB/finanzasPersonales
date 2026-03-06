@@ -1,6 +1,6 @@
 export default function ResumenCuentas() {
   return (
-    <div className="lg:w-1/4 w-full bg-transparent p-3 flex flex-col justify-between  text-white gap-2 box-content">
+    <div className="lg:w-1/4 w-full bg-transparent p-3 flex flex-col justify-between  text-white gap-2 box-content ">
       <div className="text-center p-2">
         <h3 className="text-lg">TIPO CUENTAS</h3>
       </div>
